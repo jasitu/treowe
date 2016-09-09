@@ -1,0 +1,448 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Treowe / Detectives</title>
+<link href="../slices/images/favicon.png" rel="shortcut icon" type="image/x-icon" />
+<link href="treowe.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+/** put these in stylesheet later **/
+	#nav ul {
+		visibility: hidden;
+		position: absolute;;
+	}
+	#nav ul li {
+	background: url(../slices/images/home/navigation/navbg.png);
+	height: 35px;
+	width: 100px;
+	display: block;
+	border-top: 1px #000;
+	border-bottom: 1px #000;
+	padding: 0px;
+	}
+	#nav > li:hover ul {
+	visibility: visible;
+	position: absolute;
+	padding: 0;
+	}
+
+#nav {
+	position:absolute;
+	width:800px;
+	height:51px;
+	z-index:2;
+	left: 115px;
+	top: 169px;
+	background: url(../slices/images/home/navigation/navbg.png);
+}
+#nav, #nav > li {
+	padding: 0;
+	margin: 0;
+	list-style-image: none;
+	list-style-type: none;
+}
+#nav > li {
+	float: left;
+}
+#logo {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:2;
+	left: 133px;
+	top: 21px;
+}
+#header {
+	position:absolute;
+	width:498px;
+	height:172px;
+	z-index:3;
+	left: 411px;
+	top: -4px;
+}
+#body {
+	position:absolute;
+	width:800px;
+	height:535px;
+	z-index:1;
+	left: 115px;
+	top: 225px;
+	background: url(../slices/images/home/body.png);
+	text-align: left;
+	border-width: 1px;
+	border-color: #FFF;
+}
+#bgimage {
+	position: absolute;
+	left: 404px;
+	top: 179px;
+}
+#form {
+	position:absolute;
+	width:145px;
+	height:34px;
+	z-index:4;
+	left: 734px;
+	top: 181px;
+}
+#apDiv1 {
+	position:absolute;
+	width:42px;
+	height:37px;
+	z-index:1;
+	left: 134px;
+	top: -6px;
+}
+#sitemap {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:1;
+}
+div.pismis {
+	position:absolute;
+	width:152px;
+	height:447px;
+	z-index:1;
+	left: 26px;
+	top: 66px;
+	border-width: 1px;
+	border-color: #000;
+}
+img.a {
+	position: absolute;
+	left: 0px;
+	top: 3px;
+	z-index: 10;
+	border-width: 1px;
+	border-color: #000;
+	}	
+img.b {
+	position: absolute;
+	left: 0px;
+	top: 3px;
+	border-width: 1px;
+	border-color: #000;
+	}	
+div.nomos {
+	position: absolute;
+	}
+img.c {
+	position: absolute;
+	left: 215px;
+	top: -17px;
+	z-index: 10;
+	}	
+img.d {
+	position: absolute;
+	left: 215px;
+	top: -17px;
+	}
+div.elpis {
+	position: absolute;
+	}
+img.e {
+	position: absolute;
+	left: 417px;
+	top: -17px;
+	z-index: 10;
+	}	
+img.f {
+	position: absolute;
+	left: 417px;
+	top: -17px;
+	}
+div.alke {
+	position: absolute;
+	}
+img.g {
+	position: absolute;
+	left: 612px;
+	top: -17px;
+	z-index: 10;
+	}	
+img.h {
+	position: absolute;
+	left: 612px;
+	top: -17px;
+	}
+</style>
+<script src="jquery.js"></script>
+<script type="text/javascript">
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+</script>
+<script>
+$(document).ready( function() { 
+	$("#nav .fade").hover(
+		function () {
+			// this is what happens when your mouse is on
+			var nav_id = $(this).attr("id");
+			var header_src = $("#header #head1").attr("src");
+			var this_nav_src = $(this).attr("src");
+			if (nav_id == "home")
+			{
+				new_header_src = "../slices/images/home/header.png";
+				nav_on_src = "../slices/images/home/navigation/homeon.png";
+			}
+			else if (nav_id == "mission")
+			{
+				new_header_src = "../slices/images/home/header1.png";
+				nav_on_src = "../slices/images/home/navigation/missionon.png";
+			}
+			else if (nav_id == "detectives")
+			{
+				new_header_src = "../slices/images/home/header2.png";
+				nav_on_src = "../slices/images/home/navigation/detectiveson.png";
+			}
+			else if (nav_id == "cases")
+			{
+				new_header_src = "../slices/images/home/header3.png";
+				nav_on_src = "../slices/images/home/navigation/caseson.png";
+			}
+			else if (nav_id == "contact")
+			{
+				new_header_src = "../slices/images/home/header4.png";
+				nav_on_src = "../slices/images/home/navigation/contacton.png";
+			}
+			else if (nav_id == "detective1")
+			{
+				nav_on_src = "../slices/images/home/navigation/submenubuttons/detective1on.png";
+			}	
+			else if (nav_id == "detective2")
+			{
+				nav_on_src = "../slices/images/home/navigation/submenubuttons/detective2on.png";
+			}
+			else if (nav_id == "detective3")
+			{
+				nav_on_src = "../slices/images/home/navigation/submenubuttons/detective3on.png";
+			}
+			else if (nav_id == "detective4")
+			{
+				nav_on_src = "../slices/images/home/navigation/submenubuttons/detective4on.png";
+			}
+			else if (nav_id == "case1")
+			{
+				nav_on_src = "../slices/images/home/navigation/submenubuttons/case1on.png";
+			}
+			else if (nav_id == "case2")
+			{
+				nav_on_src = "../slices/images/home/navigation/submenubuttons/case2on.png";
+			}
+			else if (nav_id == "case3")
+			{
+				nav_on_src = "../slices/images/home/navigation/submenubuttons/case3on.png";
+			}
+			else if (nav_id == "case4")
+			{
+				nav_on_src = "../slices/images/home/navigation/submenubuttons/case4on.png";
+			}
+
+			// do the animation only if you're on a different button
+			if (header_src != new_header_src)
+			{
+				$("#header #head1").attr("src", "").hide();
+				$("#header #head1").attr("src", new_header_src).fadeIn("slow").show();
+			}
+			// change nav
+			$(this).attr("src", nav_on_src);
+		},
+		function () {
+			// this is what happens once your mouse is off
+			var nav_id = $(this).attr("id");
+			if (!$(this).hasClass("active"))
+			{
+				if (nav_id == "home")
+				{
+					nav_off_src = "../slices/images/home/navigation/homeoff.png";
+				}
+				else if (nav_id == "mission")
+				{
+					nav_off_src = "../slices/images/home/navigation/missionoff.png";
+				}
+				else if (nav_id == "detectives")
+				{
+					nav_off_src = "../slices/images/home/navigation/detectivesoff.png";
+				}
+				else if (nav_id == "cases")
+				{
+					nav_off_src = "../slices/images/home/navigation/casesoff.png";
+				}
+				else if (nav_id == "contact")
+				{
+					nav_off_src = "../slices/images/home/navigation/contactoff.png";
+				}
+				else if (nav_id == "detective1")
+				{
+					nav_off_src = "../slices/images/home/navigation/submenubuttons/detective1off.png";
+				}
+				else if (nav_id == "detective2")
+				{
+					nav_off_src = "../slices/images/home/navigation/submenubuttons/detective2off.png";
+				}
+				else if (nav_id == "detective3")
+				{
+					nav_off_src = "../slices/images/home/navigation/submenubuttons/detective3off.png";
+				}
+				else if (nav_id == "detective4")
+				{
+					nav_off_src = "../slices/images/home/navigation/submenubuttons/detective4off.png";
+				}
+				else if (nav_id == "case1")
+				{
+					nav_off_src = "../slices/images/home/navigation/submenubuttons/case1off.png";
+				}
+				else if (nav_id == "case2")
+				{
+					nav_off_src = "../slices/images/home/navigation/submenubuttons/case2off.png";
+				}
+				else if (nav_id == "case3")
+				{
+					nav_off_src = "../slices/images/home/navigation/submenubuttons/case3off.png";
+				}				
+				else if (nav_id == "case4")
+				{
+					nav_off_src = "../slices/images/home/navigation/submenubuttons/case4off.png";
+				}
+				// change nav
+				$(this).attr("src", nav_off_src);
+			}
+		}
+	);
+});
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+<script type='text/javascript' src='jquery.js'></script>
+
+<script type='text/javascript'>
+$(document).ready(function(){
+$("img.a").hover(
+function() {
+$(this).stop().animate({"opacity": "0"}, "slow");
+},
+function() {
+$(this).stop().animate({"opacity": "1"}, "slow");
+});
+
+});
+</script>
+<script type='text/javascript'>
+$(document).ready(function(){
+$("img.c").hover(
+function() {
+$(this).stop().animate({"opacity": "0"}, "slow");
+},
+function() {
+$(this).stop().animate({"opacity": "1"}, "slow");
+});
+
+});
+</script>
+<script type='text/javascript'>
+$(document).ready(function(){
+$("img.e").hover(
+function() {
+$(this).stop().animate({"opacity": "0"}, "slow");
+},
+function() {
+$(this).stop().animate({"opacity": "1"}, "slow");
+});
+
+});
+</script>
+<script type='text/javascript'>
+$(document).ready(function(){
+$("img.g").hover(
+function() {
+$(this).stop().animate({"opacity": "0"}, "slow");
+},
+function() {
+$(this).stop().animate({"opacity": "1"}, "slow");
+});
+
+});
+</script>
+
+</head>
+
+<body class onload="MM_preloadImages('../slices/images/home/navigation/homeon.png','../slices/images/home/navigation/missionon.png','../slices/images/home/navigation/detectiveson.png','../slices/images/home/navigation/contacton.png','../slices/images/home/header.png','../slices/images/home/header2.png','../slices/images/home/header3.png','../slices/images/home/header4.png','../slices/images/home/header1.png','../slices/images/home/navigation/casesoff.png','../slices/images/detectives/pistison.png','../slices/images/detectives/nomoson.png','../slices/images/detectives/elpison.png','../slices/images/detectives/alkeon.png')">
+
+<div id="wrapper"><img src="../slices/images/bodybg.jpg" width="1024" height="768" alt="homebg" />
+<div id="logo"><a href="home.html"><img src="../slices/images/logo.png" alt="logo" name="logotop" width="264" height="130" id="logotop" longdesc="homepage.html" /></a></div>
+ <div id="header"><img src="../slices/images/home/header.png" alt="header" name="head1" width="508" height="173" id="head1" /></div>
+<!--navigation-->
+<ul id="nav" name="nav">
+	<li> <a href="home.html"><img src="../slices/images/home/navigation/homeoff.png" alt="home" name="home" width="95" height="46" class="fade" id="home" /></a>
+	</li>
+	<li>
+		<a href="mission.html"><img src="../slices/images/home/navigation/missionoff.png" alt="mission" name="mission" width="131" height="46" border="0" id="mission" class="fade" /></a>
+	</li>
+	<li>
+		<a href="detectives.html"><img src="../slices/images/home/navigation/detectiveson.png" alt="detectives" name="detectives" width="117" height="46" border="0" id="detectives" class="" /></a>
+        <ul>
+		  <li><a href="detectivesmenu.html"><img src="../slices/images/home/navigation/submenubuttons/detective1off.png" alt="detective1" name="detective1" width="100" height="35" border="0" id="detective1" class="fade" /></a></li>
+		  <li><a href="detectivesmenu.html"><img src="../slices/images/home/navigation/submenubuttons/detective2off.png" alt="detective2" name="detective2" width="100" height="35" border="0" id="detective2" class="fade" /></a></li>
+		  <li><a href="detectivesmenu.html"><img src="../slices/images/home/navigation/submenubuttons/detective3off.png" alt="detective3" name="detective3" width="100" height="35" border="0" id="detective3" class="fade" /></a></li>
+          <li><a href="detectivesmenu.html"><img src="../slices/images/home/navigation/submenubuttons/detective4off.png" alt="detective4" name="detective4" width="100" height="35" border="0" id="detective4" class="fade" /></a></li>
+	  </ul>
+  </li>
+	<li>
+		<a href="cases.html"><img src="../slices/images/home/navigation/casesoff.png" alt="cases" name="cases" width="79" height="46" border="0" id="cases" class="fade" /></a>
+        <ul>
+		  <li><a href="cases.html#cased5"><img src="../slices/images/home/navigation/submenubuttons/case1off.png" alt="case1" name="case1" width="100" height="35" border="0" id="case1" class="fade" /></a></li>
+		  <li><a href="cases.html#caseq2"><img src="../slices/images/home/navigation/submenubuttons/case2off.png" alt="case2" name="case2" width="100" height="35" border="0" id="case2" class="fade" /></a></li>
+		  <li><a href="cases.html#caset7"><img src="../slices/images/home/navigation/submenubuttons/case3off.png" alt="case3" name="case3" width="100" height="35" border="0" id="case3" class="fade" /></a></li>
+          <li><a href="cases.html#casez1"><img src="../slices/images/home/navigation/submenubuttons/case4off.png" alt="case4" name="case4" width="100" height="35" border="0" id="case4" class="fade" /></a></li>
+      </ul>
+  </li>
+	<li>
+		<a href="contact.html"><img src="../slices/images/home/navigation/contactoff.png" alt="contact" name="contact" width="120" height="46" border="0" id="contact" class="fade" /></a>
+	</li>
+	<li>
+		<img src="../slices/images/home/navigation/search.png" width="230" height="46" alt="search" />
+	</li>
+</ul>
+<div id="form"><form method="get" action="http://www.google.com/search">
+<input name="q" type="text" value="" size="15" /> 
+<div id="apDiv1"><input type="image" src="../slices/images/home/navigation/pro-badge.png" /> 
+</div>
+</form>
+</div>
+<!--navigation-->
+
+<div id="body">
+  <div class="title1"><h1>Detectives</h1></div>
+  <div class="pismis"> <a href="detectivesmenu.html"><img src="../slices/images/detectives/pistisoff.png" alt="" width="152" height="447" class="a" /></a>
+<a href="detectivesmenu.html"><img src="../slices/images/detectives/pistison.png" alt="" width="152" height="447" class="b" /></a>
+  </div>
+ <div class="nomos"> <a href="detectivesmenu.html#nomos"><img src="../slices/images/detectives/nomosoff.png" alt="" width="162" height="447" class="c" /></a>
+   <a href="detectivesmenu.html"><img src="../slices/images/detectives/nomoson.png" alt="" width="162" height="447" class="d" /></a>
+ </div>
+  <div class="elpis"> <a href="detectivesmenu.html#elpis"><img src="../slices/images/detectives/elpisoff.png" alt="" width="160" height="447" class="e" /></a>
+    <a href="detectivesmenu.html"><img src="../slices/images/detectives/elpison.png" alt="" width="160" height="447" class="f" /></a>
+  </div>
+ <div class="alke"> <a href="detectivesmenu.html#alke"><img src="../slices/images/detectives/alkeoff.png" alt="" width="153" height="447" class="g" /></a>
+   <a href="detectivesmenu.html"><img src="../slices/images/detectives/alkeon.png" alt="" width="153" height="447" class="h" /></a>
+ </div>
+
+</div>
+
+</body>
+</html>
